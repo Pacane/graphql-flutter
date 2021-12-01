@@ -1,19 +1,17 @@
 @Skip('currently failing for web socket services unavailable')
-
 import 'dart:async';
-
-import 'package:async/async.dart';
-import 'package:rxdart/subjects.dart';
-import 'package:stream_channel/src/stream_channel_transformer.dart';
-import 'package:stream_channel/stream_channel.dart';
-import 'package:test/test.dart';
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:async/async.dart';
 import 'package:gql/language.dart';
 import 'package:graphql/client.dart';
 import 'package:graphql/src/links/websocket_link/websocket_client.dart';
 import 'package:graphql/src/links/websocket_link/websocket_messages.dart';
+import 'package:rxdart/subjects.dart';
+import 'package:stream_channel/src/stream_channel_transformer.dart';
+import 'package:stream_channel/stream_channel.dart';
+import 'package:test/test.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 import './helpers.dart';
@@ -196,6 +194,7 @@ void main() {
               GraphQLError(message: 'error and data can coexist'),
             ],
             context: Context().withEntry(ResponseExtensions(null)),
+            response: {},
           ),
         ),
       );
@@ -254,6 +253,7 @@ void main() {
               GraphQLError(message: 'error and data can coexist'),
             ],
             context: Context().withEntry(ResponseExtensions(null)),
+            response: {},
           ),
         ),
       );
